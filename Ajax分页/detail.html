@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body style="font-size: 50px">
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript">
+    //获取页面地址栏中URL地址后面问号传递过来的参数值
+    //通过这个值向后台请求详细数据
+    //把信息数据展示在当前页面中
+
+    function queryURLParameter(url){//获取当前页面地址栏中的参数
+        var obj={};
+        var reg=/([^?=&]+)=([^?=&]+)/g;
+        url.replace(reg,function(){
+        //拿当前获取的字符串和正则进行匹配，匹配到一次执行一次function。匹配几次就执行几次
+
+            console.log(arguments);
+            obj[arguments[1]]=arguments[2];
+        });
+        return obj;
+        //detail.html?num=009;我要截取的是num 009
+    }
+    //返回的是obj，结果就是{num:"009"};
+
+    var url=window.location.href;//获取当前页面地址栏中的URL地址，包括问号后边传递进来的参数
+    var num=queryURLParameter(url).num;
+
+    utils.ajax("data.txt",function(data){
+        for (var i=0;i<data.length;i++){
+            var cur=data[i];
+            if (cur["num"]===num){
+                document.write("num:"+cur.num+"sex:"+cur.sex+"score:"+cur.score);
+                break;
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<div class="box">
+    <h2>
+        <span>学号</span>
+        <span>性别</span>
+        <span>分数</span>
+    </h2>
+    <ul id="list" class="list">
+        <!-- class一般是用来设置样式的，而id是在js中获取的-->
+        <li>
+            <span>001</span>
+            <span>男</span>
+            <span>98</span>
+        </li>
+        <li class="even">
+            <span>002</span>
+            <span>女</span>
+            <span>88</span>
+        </li>
+        <li>
+            <span>003</span>
+            <span>男</span>
+            <span>78</span>
+        </li>
+    </ul>
+    <div id="page" class="page">
+        <span id="first">首页</span>
+        <span id="prev">上一页</span>
+        <ul id="pageList">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <span id="next">下一页</span>
+        <span id="last">尾页</span>
+        <input type="text" id="search"/>
+    </div>
+</div>
+<script type="text/javascript" src="utils.js"></script>
+<script type="text/javascript" src="index222.js"></script>
+</body>
+</html>

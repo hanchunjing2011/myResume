@@ -1,0 +1,102 @@
+body,div,h2,span,ul,li,input{
+    margin: 0;
+    padding: 0;
+    font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+    font-size: 14px;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+ul,li{
+    list-style: none;
+}
+input{
+    /*去除默认边框*/
+    outline: none;
+}
+
+.box{
+    overflow: hidden;
+    /*清除page浮动对box的影响*/
+
+    width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid gray;
+
+    /*css3:pc端中不需要加前缀了，因为ie9及以上的兼容还不错，火狐、谷歌的兼容也不错*/
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 0 gray;
+}
+.box h2{
+    height: 35px;
+    line-height: 35px;
+    background-color: lightgrey;
+    /*渐变：要求必须加前缀。再设置一个纯色的背景色*/
+    background: -webkit-linear-gradient(left,lightcoral,lightblue,lightseagreen,lightsalmon );
+}
+.box h2 span{
+    /*如果使用display：inlline-block但是空格和enter是占位置，里面所有的元素都变道一行*/
+    display: block;
+    float: left;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+}
+.box .list li{
+    height: 30px;
+    line-height: 30px;
+}
+.box .list li span{
+    display: block;
+    float: left;
+    width: 200px;
+    text-align: center;
+}
+.box .list li.even{
+    background-color: lightgoldenrodyellow;
+}
+
+/*分页区域的样式*/
+.box .page{
+    float: right;
+    /*overflow: hidden;*/
+    margin-top: 10px;
+}
+.box .page span{
+    margin-left: 5px;
+    border: 1px solid green;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.box .page ul{
+    float: left;
+    overflow: hidden;/*清除li的浮动对自己的影响*/
+}
+.box .page ul li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    line-height: 20px;
+    border: 1px solid green;
+    text-align: center;
+    cursor: pointer;
+}
+.box .page ul li.select{
+    background-color: lightgreen;
+    color: whitesmoke;
+}
+.box .page input{
+    margin-left: 5px;
+    width: 50px;
+    height: 20px;
+    border: 1px solid green;
+    text-align: center;
+    font-size: 12px;
+}
